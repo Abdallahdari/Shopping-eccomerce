@@ -1,20 +1,21 @@
 function Footer() {
+  function handleEvnet(e) {}
   return (
-    <div className="bg-slate-950">
+    <div className="bg-slate-950 dark:text-white text-black ">
       <div className="container mx-auto xl:max-w-[1200px]">
         <div className="grid grid-cols-4 gap-10 py-10 px-4">
           <div className="grid-1">
             <h1 className="mb-4 text-3xl font-semibold">Exclusive</h1>
             <h2 className="text-xl mb-3">Subscripe</h2>
             <p className="text-xs mb-3">Get 10% off your first order</p>
-            <div className="flex items-center  relative">
+            <form className="flex items-center  relative w-[200px]">
               <input
                 type="text"
                 required
                 className="py-1 w-full px-3 outline-none rounded-md"
               ></input>
               <svg
-                className="absolute fill-[#e8eaed] right-3 hover:cursor-pointer hover:fill-slate-500 transition duration-200  "
+                className="absolute fill-gray-600 right-3 hover:cursor-pointer hover:fill-slate-800 transition duration-200  "
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"
                 viewBox="0 -960 960 960"
@@ -22,7 +23,7 @@ function Footer() {
               >
                 <path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z" />
               </svg>
-            </div>
+            </form>
           </div>
           <div>
             <h1 className="mb-4 text-xl font-semibold">Support</h1>
