@@ -1,7 +1,7 @@
 import Stars from "./stars";
 
 function Cart({ items, maxRating }) {
-  const total = items.reduce((cur, item) => cur + item.Pricee, 0);
+  const total = items.reduce((cur, item) => cur + item.price, 0);
   return (
     <>
       {" "}
@@ -10,7 +10,8 @@ function Cart({ items, maxRating }) {
           {items.map((el, index) => (
             <div key={index} className="flex items-center gap-4 my-5  ">
               <img src={el.image} alt="" />
-              <p>${el.Pricee}</p>
+              <p>${el.price}</p>
+
               <Stars maxRating={maxRating} />
             </div>
           ))}

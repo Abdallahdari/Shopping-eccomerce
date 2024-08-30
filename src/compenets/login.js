@@ -1,9 +1,5 @@
 function Login() {
-  return (
-    <div>
-      <h1>Log in</h1>
-    </div>
-  );
+  return <div className="flex justify-center rounded-md"></div>;
 }
 
 export default Login;

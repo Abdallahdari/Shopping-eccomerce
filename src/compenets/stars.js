@@ -2,24 +2,34 @@ import { useState } from "react";
 
 function Stars({ maxRating }) {
   const [rating, SetRating] = useState(0);
+  const [TempR, SetTemp] = useState(0);
   return (
     <div className="flex items-center gap-2">
       {Array.from({ length: maxRating }, (_, i) => (
         <Rating
           key={i}
-          filll={rating >= i + 1}
+          filll={TempR ? TempR >= i + 1 : rating >= i + 1}
           onRating={() => SetRating(i + 1)}
+          onMoseenter={() => SetTemp(i + 1)}
+          onMouseleave={() => SetTemp(0)}
         />
       ))}
-      <p>{rating || ""} </p>
+      <p className="text-[#e67700] font-semibold">
+        {TempR ? TempR : rating || ""}{" "}
+      </p>
     </div>
   );
 }
 
-function Rating({ onRating, filll }) {
+function Rating({ onRating, filll, onMoseenter, onMouseleave }) {
   return (
     <>
-      <span onClick={onRating} className="w-[28px] h-[28px] cursor-pointer ">
+      <span
+        onClick={onRating}
+        onMouseEnter={onMoseenter}
+        onMouseLeave={onMouseleave}
+        className="w-[28px] h-[28px] cursor-pointer "
+      >
         {" "}
         {filll ? (
           <svg
